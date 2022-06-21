@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:wellness_buddy/landing_screens/on_boarding_screen.dart';
 import 'package:wellness_buddy/user_authenticating_screens/login_screen.dart';
 
 void main() {
