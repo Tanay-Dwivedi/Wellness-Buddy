@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
+import 'package:wellness_buddy/home_screens/home_screen.dart';
 import 'package:wellness_buddy/user_authenticating_screens/forgot_passwordscreen.dart';
 import 'package:wellness_buddy/user_authenticating_screens/signup_screen.dart';
 
@@ -22,11 +23,15 @@ class _LoginScreenState extends State<LoginScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Center(
-              child: Lottie.asset(
-                'assets/login_anim.json',
-                repeat: true,
-                height: (MediaQuery.of(context).size.width) * 0.75,
-                width: (MediaQuery.of(context).size.width) * 0.75,
+              child: Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 0, vertical: 45),
+                child: Lottie.asset(
+                  'assets/login_anim.json',
+                  repeat: true,
+                  height: (MediaQuery.of(context).size.width) * 0.75,
+                  width: (MediaQuery.of(context).size.width) * 0.75,
+                ),
               ),
             ),
             Padding(
@@ -176,7 +181,16 @@ class _LoginScreenState extends State<LoginScreen> {
                   width: (MediaQuery.of(context).size.width) * 0.75,
                   height: (MediaQuery.of(context).size.width) * 0.09,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: ((context) {
+                            return const HomeScreen();
+                          }),
+                        ),
+                      );
+                    },
                     style: ElevatedButton.styleFrom(
                       primary: const Color.fromRGBO(0, 101, 255, 1),
                       shape: RoundedRectangleBorder(
@@ -248,7 +262,16 @@ class _LoginScreenState extends State<LoginScreen> {
                   width: (MediaQuery.of(context).size.width) * 0.75,
                   height: (MediaQuery.of(context).size.width) * 0.09,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: ((context) {
+                            return const HomeScreen();
+                          }),
+                        ),
+                      );
+                    },
                     style: ElevatedButton.styleFrom(
                       primary: const Color.fromRGBO(241, 245, 246, 1),
                       shape: RoundedRectangleBorder(
