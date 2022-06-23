@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
+import 'package:wellness_buddy/user_authenticating_screens/forgot_passwordscreen.dart';
+import 'package:wellness_buddy/user_authenticating_screens/signup_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -145,12 +147,24 @@ class _LoginScreenState extends State<LoginScreen> {
               padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 5),
               child: Container(
                 alignment: Alignment.centerRight,
-                child: Text(
-                  'Forgot Password?',
-                  style: GoogleFonts.nunito(
-                    fontSize: 18,
-                    color: const Color.fromRGBO(0, 101, 255, 1),
+                child: GestureDetector(
+                  child: Text(
+                    'Forgot Password?',
+                    style: GoogleFonts.nunito(
+                      fontSize: 18,
+                      color: const Color.fromRGBO(0, 101, 255, 1),
+                    ),
                   ),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: ((context) {
+                          return const ForgetPasswordScreen();
+                        }),
+                      ),
+                    );
+                  },
                 ),
               ),
             ),
@@ -287,12 +301,24 @@ class _LoginScreenState extends State<LoginScreen> {
                   Padding(
                     padding:
                         const EdgeInsets.symmetric(horizontal: 2, vertical: 0),
-                    child: Text(
-                      'Register',
-                      style: GoogleFonts.nunito(
-                        color: const Color.fromRGBO(0, 101, 255, 1),
-                        fontSize: 15,
+                    child: GestureDetector(
+                      child: Text(
+                        'Register',
+                        style: GoogleFonts.nunito(
+                          color: const Color.fromRGBO(0, 101, 255, 1),
+                          fontSize: 15,
+                        ),
                       ),
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: ((context) {
+                              return const SignUpScreen();
+                            }),
+                          ),
+                        );
+                      },
                     ),
                   ),
                 ],
